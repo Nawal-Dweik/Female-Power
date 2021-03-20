@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    {% load static %}
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+    <link rel="stylesheet" href="static/css/test.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    
+</head>
+<body>  
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #f73366 !important;font-weight: 50 !important;font-size: 1.2em !important;">
+        
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'img/logo.png'%}" alt="" width="100" height="59" class="d-inline-block align-center">
+                WomanWhoCode
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item " style=" margin-left: 16%;">
+                        <a class="nav-link-edit" style="color: #fff;" href="/allpostcommunity">community</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 28%;">
+                        <a class="nav-link-edit " style="color: #fff;" href="/update_profile">profile</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 32%;">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 170px;color: #2e86c1 !important;">
+                            <button class="btn btn-outline-success" type="submit"  style=" font-size: 92%!important; color: white !important; border-color: white !important;">Search</button>
+                        </form>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link-edit" style="color: #fff;margin-left: 200%;" href="/logout">logout</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <h3>Post Details </h3>
+        </div>
+        <div class="row"style=" width: 214%; margin-top: 20%;">
+            <div class="col-md-6">
+                <div class="widget-area no-padding blank">
+                    <div class="status-upload">
+                        <fieldset   style =" min-width: 0;padding: 30px;margin: 5px;border: outset;">
+                            <label >Title :{{post.title}}</label>
+                            <br>
+                            <label >Contant :{{post.content}}</label>
+                            <br>        
+                            <label >Time :{{post.updated_at}}</label>
+                            <br> </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    
+    <div class="container">
+        <div class="row" >
+            <h5>Post  </h5>
+        </div>
+        {% for post in post_data %}
+        <!-- <fieldset   style =" min-width: 0;padding: 30px;margin: 5px;border: outset;">
+
+        <p>{{ post.user.first_name }} {{ post.user.last_name}} - {{ post.created_at }}</p>
+        <p>{{post.content}}</p>
+        </fieldset> -->
+
+        {% for comment in post.m_comments.all %}
+        <p>{{ comment.user.first_name }} {{ comment.user.last_name}} - {{ comment.created_at }}</p>
+        <h5>{{comment.content}}</h5>
+        {% endfor %}
+        <fieldset>
+            <form action="/posts/{{post.id}}/addcomment" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="post_id" value="{{post.id}}">
+            <label for="comment">Post a comment: </label>
+            <br>
+            <textarea name="comment" id="comment" cols="140" rows="2" required></textarea>
+            <br>
+            <br>
+            <input type="submit"  style=" background-color: #f73366 !important" value="Post a comment">
+        </form>
+
+    {% endfor %}</fieldset>
+    </div>
+<br>
+  <!--   <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+        <div class="container">
+            <div class="row row-30">
+            <div class="col-md-4 col-xl-5">
+            <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light" src="images/agency/logo-inverse-140x37.png" alt="" width="140" height="37" srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
+                <p>We inspire Palestinian women to excel in technology careers.</p>
+                
+                <p class="rights"><span>©  </span><span class="copyright-year">2020</span><span> </span><span>. </span><span>All Rights Reserved.</span></p>
+            </div>
+            </div>
+            <div class="col-md-4">
+                <h5>Contacts</h5>
+                <dl class="contact-list">
+                    <dt>Address:</dt>
+                    <dd>Ramallah, Palestine</dd>
+                </dl>
+                <dl class="contact-list">
+                    <dt>email:</dt>
+                    <dd><a href="mailto:#">info@wwcode.com</a></dd>
+                </dl>
+                
+            </div>
+            <div class="col-md-4 col-xl-3">
+                <h5>Links</h5>
+                <ul class="nav-list">
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Work with us</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    
+                </ul>
+            </div>
+            </div>
+            </div>
+            <div class="row no-gutters social-container">
+            <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
+            <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
+            <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
+            <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
+        </div>
+    </footer> -->
+
+    <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+        <div class="container">
+            <div class="row row-30">
+            <div class="col-md-4 col-xl-5">
+            <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light" src="{% static 'img/logo.png'%}" alt="" width="140" height="37" srcset="images/agency/logo-retina-inverse-280x74.png 2x" style= "margin-bottom: 5%;margin-top: 3%;"></a>
+                <p>We inspire Palestinian women to excel in technology careers.</p>
+                
+                <p class="rights"><span>©  </span><span class="copyright-year">2020</span><span> </span><span>. </span><span>All Rights Reserved.</span></p>
+            </div>
+            </div>
+            <div class="col-md-4">
+                <h5>Contacts</h5>
+                <dl class="contact-list">
+                    <dt>Address:</dt>
+                    <dd>Ramallah, Palestine</dd>
+                </dl>
+                <dl class="contact-list">
+                    <dt>email:</dt>
+                    <dd><a href="mailto:#">info@wwcode.com</a></dd>
+                </dl>
+                
+            </div>
+            
+            <div class="col-md-4 col-xl-3">
+                <h5>Links</h5>
+                <ul class="nav-list">
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Work with us</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    
+                </ul>
+            </div>
+            </div>
+            </div>
+            <div class="row no-gutters social-container">
+            <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
+            <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
+            <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
+            <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/profile_pages_style.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #f73366 !important;font-weight: 50 !important;font-size: 1.2em !important;">
+        
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'img/logo.png'%}" alt="" width="100" height="59" class="d-inline-block align-center">
+                WomanWhoCode
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item " style=" margin-left: 16%;">
+                        <a class="nav-link-edit" style="color: #fff;" href="/allpostcommunity">community</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 28%;">
+                        <a class="nav-link-edit " style="color: #fff;" href="/update_profile">profile</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 32%;">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 170px;color: #2e86c1 !important;">
+                            <button class="btn btn-outline-success" type="submit"  style=" font-size: 92%!important; color: white !important; border-color: white !important;">Search</button>
+                        </form>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link-edit" style="color: #fff;margin-left: 200%;" href="/logout">logout</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <form action="/update_profile" action="post">
+        <div class="profile-content">
+            {% load static %}
+            <center>
+                <img src="{% static 'img/avatar.jpg' %}" class="img-fluid img-thumbnail profile-image" alt="profile image">
+
+                <br />
+                <label id="open-for-work">Open For Work</label>
+                <div class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"
+                        tabindex="0" checked>
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                        <span class="onoffswitch-inner"></span>
+                        <span class="onoffswitch-switch"></span>
+                    </label>
+                </div>
+            </center>
+            <div class="fields-view-mode">
+                <label for="name">Name</label>
+                <output>{{name}}</output>
+                <br />
+                <label for="email">E-mail</label>
+                <output>{{email}}</output>
+
+                <br />
+                <label for="mobile">Mobile Phone</label>
+                <output>{{mobile}}</output>
+                <br />
+                <label for="country">Countries</label>
+                <output>{{country}}</output>
+                <br />
+                <label for="education">Education</label>
+                <output>{{education}}</output>
+                <br />
+                <label class="from" for="edu-from">from:</label>
+                <output>{{edu_from}}</output>
+                <label class="to" for="edu-to">to:</label>
+                <output>{{edu_to}}</output>
+
+
+                <div>
+                    <label for="experience">Experience</label>
+
+                    <output>{{experience}}</output>
+                    <br />
+                    <label class="from" for="exp-from">from:</label>
+                    <output>{{exp_from}}</output>
+                    <label class="to" for="exp-to">to:</label>
+                    <output>{{exp_to}}</output>
+                </div>
+
+                <div class="form-group">
+                    <label for="skills">Skills</label>
+                    <output>{{skills}}</output>
+                </div>
+
+                <div class="form-group">
+                    <label for="links">Links</label>
+                    <output>{{links}}</output>
+                </div>
+                <div class="form-group">
+                    <label for="video-demo-url">Video Demo</label>
+                    <output name="video-demo-url">{{video_url}}</output>
+                </div>
+            </div>
+            <center>
+                <button type="submit" class="btn btn-primary">Edit Profile</button>
+            </center>
+        </div>
+    </form>
+</body>
+
+</html>

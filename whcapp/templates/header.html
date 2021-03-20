@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="static/css/test.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+</head>
+<body>  
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'img/main_img.png'%}" alt="" width="30" height="24" class="d-inline-block align-top">
+                WomanWhoCode
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"style="
+                margin-left: 30%;">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">community</a>
+                    <!-- <div>
+                        <a href="/myaccount/{{request.session.user_id}}">Edit My Account</a> -->
+                        <!-- <a class="btn" href="/logout">Logout</a> 
+                    </div> -->
+                    </li>
+                    <li>
+                    <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                </li>
+
+
+                    <select names="tagging"style ="border-color: #dbdddf; width: 2%; margin-left: 3%;">
+                        <option selected disabled>Choose Tagging</option>
+                        <!-- <option value="" disabled="disabled">:arrow_down:</option> -->
+                        <option value="Option A">Option A</option>
+                        <option value="Option B">Option B</option>
+                        <option value="Option C">Option C</option>
+                    </select>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+            <div class="container">
+                <div class="row row-30">
+                <div class="col-md-4 col-xl-5">
+                <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light" src="images/agency/logo-inverse-140x37.png" alt="" width="140" height="37" srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
+                    <p>We inspire Palestinian women to excel in technology careers.</p>
+                    
+                    <p class="rights"><span>©  </span><span class="copyright-year">2020</span><span> </span><span>. </span><span>All Rights Reserved.</span></p>
+                </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacts</h5>
+                    <dl class="contact-list">
+                        <dt>Address:</dt>
+                        <dd>Ramallah, Palestine</dd>
+                    </dl>
+                    <dl class="contact-list">
+                        <dt>email:</dt>
+                        <dd><a href="mailto:#">info@wwcode.com</a></dd>
+                    </dl>
+                    
+                </div>
+                <div class="col-md-4 col-xl-3">
+                    <h5>Links</h5>
+                    <ul class="nav-list">
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Work with us</a></li>
+                        <li><a href="#">Contacts</a></li>
+                        
+                    </ul>
+                </div>
+                </div>
+                </div>
+                <div class="row no-gutters social-container">
+                <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
+                <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
+                <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
+                <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
+            </div>
+        </footer>      
+</body>
+</html>

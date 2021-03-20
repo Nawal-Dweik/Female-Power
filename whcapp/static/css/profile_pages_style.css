@@ -1,0 +1,119 @@
+.profile-image {
+    width: 10%;
+    height: 10%;
+}
+
+/* start of on off switch */
+.onoffswitch {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #f73366;
+    color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+/* end of on off switch */
+
+input:not(#search),
+select {
+    margin: 1% !important;
+    display: inline-block !important;
+    width: 15% !important;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+label:not(.onoffswitch-label):not(.from):not(.to) {
+    width: 10%;
+}
+.from,.to {
+    width: 5%;
+}
+
+.fields label:not(.onoffswitch-label):not(#open-for-work),
+video {
+    margin-left: 37%;
+}
+
+#countries {
+    display: inline-block;
+}
+
+.profile-content {
+    margin: 1% !important;
+    padding-top: 10%;
+}
+
+/* input#edu-from,
+input#edu-to,
+input#exp-from,
+input#exp-to {
+    width: 9.9% !important;
+} */
+
+#search, .search-button {
+    height: 38px;
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da;
+    -moz-appearance: none;
+    border-radius: .25rem;
+}
+
+.fields-view-mode label:not(.onoffswitch-label):not(.to):not(#open-for-work),
+video {
+    margin-left: 42%;
+}
+
+
