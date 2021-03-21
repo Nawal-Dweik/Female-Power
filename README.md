@@ -1,5 +1,5 @@
 # Female-Power
 **Team Members**
 - Nawal Dweik
-- Aseel Makharmah
+- Aseel Makhamrah
 - Ayat Ayyad
