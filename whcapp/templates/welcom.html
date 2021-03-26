@@ -96,7 +96,87 @@
                     srcset="{% static 'img/6.jpg'%}"
                     sizes="(max-width: 479px) 90vw, (max-width: 991px) 40vw, 25vw" alt="" class="image-2" /></div>
         </div>
-        
+        <div id="how-to-use" >
+            <div class="main" id="section2">
+                <div class="container-fluid row">
+                   
+                   
+                        <h3>Register</h3>
+                        <form action="/register" method="POST" >
+                            {% csrf_token %}
+                            <div class = "form-group row">
+                                <label for="first_name" class="col-3 col-form-label"> First Name: </label>
+                                <input id="first_name" type  = "text" name = "first_name" class="form-control col-9">
+                            </div>
+                            <div class = "form-group row">
+                                <label for="last_name" class="col-3 col-form-label"> Last Name: </label>
+                                <input id="last_name" class="form-control col-9" type = "text" name = "last_name">
+                            </div>
+                            <div class = "form-group row">
+                                <label for = "email" class = "col-3 col-form-label"> Email: </label>
+                                <input id = "email" type = "email" name = "email" class="form-control col-9">
+                            </div>
+                            <div class = "form-group row">
+                                <label for="password" class="col-3 col-form-label"> Password: </label>
+                                <input id="password" type = "password" name = "password" class="form-control col-9">
+                            </div>
+                            <div class = "form-group row">
+                                <label for="confirm" class="col-3 col-form-label"> Confirm Password: </label>
+                                <input id="confirm" type = "password" name = "confirm" class="form-control col-9">
+                            </div>
+                            <input class="btn btn-primary" type="submit" name="" value="Register">
+                        </form>
+                        <div>
+                            <br>
+                            {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            <br>
+                        </div>
+                        <a href="#section3">Already have an account? Sign in here!</a>
+                    
+                </div>
+            </div>
+            <br/>
+            <div class="main" id="section3">
+                <div class="container-fluid row">
+              
+                    
+                        <h3>Signin</h3>
+                        <form action="/login" method="POST">
+                            {% csrf_token %}
+                            <div class = "form-group row">
+                                <label for="email" class="col-3 col-form-label"> Email: </label>
+                                <input id="email" type  = "email" name = "email" class="form-control col-9">
+                        </div>  
+                        <div class = "form-group row">
+                            <label for="password" class="col-3 col-form-label"> Password: </label>
+                            <input id="password" type  = "password" name = "password" class="form-control col-9">
+                        </div>
+                        <input class="btn btn-primary" type="submit" name="" value="login">
+                        <br>
+                    </form>
+                    <div>
+                        <br>
+                        {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        <br>
+                    </div>
+                        <a href="#section2">Don't have an account? Register here.</a>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+        </div>
+        <br/>
         <div class="feature-wrap icons numbers">
             <div class="feature-content icons numbers">
                 <div class="number">+50K</div>
@@ -112,9 +192,7 @@
             </div>
             
         </div>
-        <div id="how-to-use" class="feature-wrap">
-            
-        </div>
+        
        
         
         <div data-w-id="23f92271-dba9-fb12-00d3-758ef4d10fb2"
