@@ -1,0 +1,38 @@
+.section.center {
+    background-image: linear-gradient( 
+2deg
+ , #ff9393, #f1bfa3);
+}
+.w-webflow-badge {
+    display: none !important;
+}
+
+.button {
+    background-color: #f97370;
+}
+
+.hero-subhead {
+    color: #585757;
+}
+
+h1 {
+    color: #5f93b5;
+}
+
+.nav-link {
+    color:#0072bc;
+}
+
+.section.wide.purple {
+    background-image: linear-gradient( 
+133deg
+ , #ff9393, #f1bfa3);
+}
+
+.nav-link:hover {
+    box-shadow: inset 0 -5px 0 0 #5f93b5;
+}
+
+.image-2 {
+    border-radius: 130px;
+}
