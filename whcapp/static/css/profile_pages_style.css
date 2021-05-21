@@ -120,3 +120,6 @@ video {
     background-color: #f97370 !important;
     border-color: #f97370 !important; }
 
+.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+        color: #ffffff;
+}

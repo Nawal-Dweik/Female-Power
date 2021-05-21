@@ -48,3 +48,7 @@ nav{
     width: 3%;
     margin-left: 3%;
 }
+
+.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+    color: #ffffff;
+}

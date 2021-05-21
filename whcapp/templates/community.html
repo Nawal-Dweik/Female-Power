@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Opportunity</title>
     {% load static %}
     {% load static %}
     <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
@@ -16,7 +16,13 @@
     
 </head>
 <body>  
+<style>
+.footer-classic a, .footer-classic a:focus, .footer-classic a:active, .footer-classic p, .footer-classic dt, .footer-classic dd, .footer-classic h5 {
+  color: #ffffff;
+}
 
+
+</style>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #f97370 !important;font-weight: 50 !important;font-size: 1.2em !important;">
         
         <div class="container-fluid">
@@ -45,10 +51,14 @@
             </div>
         </div>
     </nav>
+    <br/>
     <div class="container">
         <div class="row">
+            
             <h3>Opportunity Details </h3>
+           
         </div>
+        <br/>
         <div class="row"style=" width: 214%;">
             <div class="col-md-6">
                 <div class="widget-area no-padding blank">
@@ -68,32 +78,80 @@
     <br>
     <br>
     
-    <div class="container">
+    <div class="container" style="border: 1px solid #e2dfdf;
+    padding: 20px;">
         <div class="row" >
             <h5>Comments  </h5>
         </div>
+        <br/>
         {% for post in post_data %}
 
         {% for comment in post.m_comments.all %}
-        <p>{{ comment.user.first_name }} {{ comment.user.last_name}} - {{ comment.created_at }}</p>
-        <h5>{{comment.content}}</h5>
+        <div style="box-shadow: 5px 10px 8px #888888;
+        border: 1px solid #bdbbbb;
+        padding: 20px;">
+        <output>{{comment.content}}</output>
+        <output style="margin-left: 70%; color: #98999a;">{{ comment.user.first_name }} {{ comment.user.last_name}} - {{ comment.created_at }}</output>
+    </div>
+        <br/>
         {% endfor %}
+        
         <fieldset>
             <form action="/posts/{{post.id}}/addcomment" method="POST">
                 {% endfor %}
             {% csrf_token %}
             <input type="hidden" name="post_id" value="{{post.id}}">
-            <label for="comment">Add a comment </label>
+            <br/>
+            <h5>Add a comment </h5>
             <br>
-            <textarea name="comment" id="comment" cols="140" rows="2" required></textarea>
-            <br>
-            <br>
-            <input type="submit"  style=" background-color: #f97370 !important" value="Add">
+            <textarea style="width: 100%;" name="comment" id="comment" cols="140" rows="2" required></textarea>
+            <br/>
+            <input type="submit" class="btn-primary" style=" background-color: #f97370 !important; border: none; border-radius: .25rem; padding: .375rem .75rem;" value="Add">
         </form>
 
     </fieldset>
     </div>
 <br>
+<footer class="section footer-classic context-dark bg-image" style="background: #2d3246; padding-top: 20px;">
+    <div class="container">
+        <div class="row row-30">
+        <div class="col-md-4 col-xl-5">
+        <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light" src="{% static 'img/logo.png'%}" alt="" width="120" height="100" srcset="images/agency/logo-retina-inverse-280x74.png 2x" style= "margin-bottom: 5%;margin-top: 3%;"></a>
+            <p>We inspire women to excel in technology careers.</p>
 
+            <p class="rights"><span>©  </span><span class="copyright-year">2020</span><span> </span><span>. </span><span>All Rights Reserved.</span></p>
+        </div>
+        </div>
+        <div class="col-md-4">
+            <h5>Contacts</h5>
+            <dl class="contact-list">
+                <dt>Address:</dt>
+                <dd>Amman, Jordan</dd>
+            </dl>
+            <dl class="contact-list">
+                <dt>email:</dt>
+                <dd><a href="mailto:#">info@femalepower.com</a></dd>
+            </dl>
+
+        </div>
+
+        <div class="col-md-4 col-xl-3">
+            <h5>Links</h5>
+            <ul class="nav-list">
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Work with us</a></li>
+                <li><a href="#">Contacts</a></li>
+
+            </ul>
+        </div>
+        </div>
+        </div>
+        <div class="row no-gutters social-container">
+        <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
+        <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
+        <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
+        <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
+    </div>
+</footer>
 </body>
 </html>

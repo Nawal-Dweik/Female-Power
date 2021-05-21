@@ -1,3 +1,7 @@
+.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+  color: #ffffff !important;
+}
+
 .card-inner {
   margin-left: 4rem;
 }
@@ -243,4 +247,3 @@ body .no-padding {
     border: 1px solid #bdbbbb;
     padding: 20px;
 }
-
