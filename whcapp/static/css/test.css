@@ -44,10 +44,13 @@ body .no-padding {
   border-radius: 4px;
   float: left;
   width: 100%;
+  padding: 20px;
+  box-shadow: 5px 10px 18px #fbb5b4;
 }
 .status-upload form {
   float: left;
   width: 100%;
+ 
 }
 .status-upload form textarea {
   background: none repeat scroll 0 0 #fff;
@@ -226,5 +229,18 @@ body .no-padding {
 
   .backgroundcolor h2{
     padding :15px
+}
+
+.btn-success {
+  background-color: #f97370 !important;
+  border-color: #f97370 !important;
+}
+
+.post {
+  margin-left: 8%;
+    margin-right: 8%;
+    box-shadow: 5px 10px 8px #888888;
+    border: 1px solid #bdbbbb;
+    padding: 20px;
 }
 

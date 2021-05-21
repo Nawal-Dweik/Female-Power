@@ -29,7 +29,7 @@
 .onoffswitch-inner:before {
     content: "ON";
     padding-left: 10px;
-    background-color: #f73366;
+    background-color: #f97370;
     color: #FFFFFF;
 }
 .onoffswitch-inner:after {
@@ -116,4 +116,7 @@ video {
     margin-left: 42%;
 }
 
+.btn-primary {
+    background-color: #f97370 !important;
+    border-color: #f97370 !important; }
 
