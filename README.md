@@ -5,7 +5,7 @@
 - Ayat Ayyad
 
 # What is Female Power?
-* Female Power is a platform to help females get opportunities in technology field, any opportunity as courses, job openings or even scolorships, users can add their information to their profiles, review opportunities & communicate with opportunity posters via commenting on the opportunity.
+* Female Power is a platform to help females get opportunities in technology field, any opportunity as courses, job openings or even scholarships, users can add their information to their profiles, review opportunities & communicate with opportunity posters via commenting on the opportunity.
 
 ![home](https://github.com/Nawal-Dweik/Female-Power/blob/main/whcapp/static/img/screenshots/home.JPG)
 
